@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raksha Bandhan Greeting</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://i.imgur.com/m9dNKhK.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+        .form-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px gold;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: gold;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            background: linear-gradient(45deg, gold, orange);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            color: black;
+            transition: 0.3s;
+        }
+        button:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, orange, gold);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Happy Raksha Bandhan</h1>
+    <p>Enter your name to receive a special greeting</p>
+    <input type="text" id="visitorName" placeholder="Your Name">
+    <br>
+    <button onclick="goToGreeting()">Get Greeting</button>
+</div>
+
+<script>
+    function goToGreeting() {
+        let name = document.getElementById('visitorName').value.trim();
+        if (name === "") {
+            alert("Please enter your name!");
+        } else {
+            window.location.href = `greeting.html?name=${encodeURIComponent(name)}`;
+        }
+    }
+</script>
+
+</body>
+</html>
